@@ -8,8 +8,9 @@ public class Main {
     public static void main(String[] args) {
 
 
-Loan loanRequest = new Loan(100);
+Loan loanRequest = new Loan(100000);
         loanRequest.requestLoanCost();
+        System.out.println(loanRequest.getLowestOffer());
     }
 
 

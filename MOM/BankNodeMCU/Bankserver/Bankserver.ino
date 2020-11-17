@@ -7,8 +7,8 @@
 #include <string>  
 
 #ifndef STASSID
-#define STASSID "HS51"
-#define STAPSK "VaeHS513210V"
+#define STASSID "***"
+#define STAPSK "***"
 #endif
 
 const char* mqtt_server = "192.168.1.149";
