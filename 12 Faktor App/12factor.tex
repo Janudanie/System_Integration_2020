@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{hyperref}
+
+\begin{document}
+
+My task is to read "The twelve factor app" and answer the following.
+
+\begin{itemize}
+\item Research Internet sources discussing the recommendations.
+\item Based on your findings, try to re-order(re-number) the know factors accordingly
+\item be ready to argument these criteria in class
+\end{itemize}
+
+\section*{Research Internet sources discussing the recommendations.}
+
+\subsection*{Dependencies}
+This is a blog, where some cons against dependencies are found:
+\begin{itemize}
+\item \url{https://techblog.bozho.net/comments-on-the-twelve-factor-app/}
+\end{itemize}
+The idea mentioned here, is to avoid big app package, by have the app rely on something. I do think this will also affect the fast startup time covered by the Disposability step.
+You cannot start up a new instance of the app on a new server, if this server has to have some form of tools on it.
+
+\subsection*{all-round}
+This is a blog, where the author takes all the step and grade the importance on a scale of 1-5
+\begin{itemize}
+\item \url{https://gaddings.io/comments-on-the-twelve-factor-app/}
+\end {itemize}
+
+\section*{Re-order the know factors}
+To be honest, i can follow all the steps, and see them as equally important. I think the order is to be seem more of the order you would do all the task, to go from nothing to a fully running app.
+I do believe of the step can be skipped if not needed, ie if the app does not need a log, this step can be skipped.
+
+\section*{What is The twelve-factor app?}
+The twelve-factor app, is a methodology for building Software-As-A-Service programs.
+
+There are twelve step that has to be followed.
+
+
+The step are:
+\input{Codebase}
+\input{Dependencies}
+\input{Config}
+\input{Backing}
+\input{Build}
+\input{Process}
+\input{Port}
+\input{Concurrency}
+\input{Disposability}
+\input{Dev}
+\input{Logs}
+\input{Admin}
+
+
+
+\end{document}

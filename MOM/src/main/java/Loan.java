@@ -50,13 +50,9 @@ public class Loan {
         gt.doStop();
     }
 
-
-
-
     private void sendLoanRequest(int loanRequest){
         String topic        = "loanRequest";
         String content      =  "" + loanRequest;
-
         String clientId     = "BankClient";
         MemoryPersistence persistence = new MemoryPersistence();
         try {

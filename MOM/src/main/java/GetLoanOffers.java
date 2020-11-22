@@ -29,6 +29,9 @@ public class GetLoanOffers extends Thread{
                     String bank = temp.substring(0,5);
                     String loanCost = temp.substring(6,temp.length());
 
+
+
+
                     switch (bank) {
                         case "bank1":
                             gt.setBank1LoanCost(Integer.parseInt(loanCost));

@@ -1,0 +1,9 @@
+\section*{Backing services}
+This describes the backing services or the resources the app needs. This can be a database or a public api the app needs to run.
+There are a few ground rules this step has:
+
+\begin{itemize}
+\item The config of connection to a resource has to be in the config, not in the code base.
+\item A resource has to be able swaped out if it fails, usely by changing the config to use another resource, without changing the code base.
+
+\end{itemize}

@@ -1,0 +1,8 @@
+\section*{Disposability}
+This is about fast start up and graceful shutdowns.
+
+There are a few rules:
+\begin{itemize}
+\item The app should aim for a fast startup time, so scaling will be fast if(when) needed.
+\item The app should shutdown gracefully, meaning, stop taking new requests, and finish the ones it are working on.
+\end{itemize}
