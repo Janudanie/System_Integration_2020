@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/P11-Microservices.iml" filepath="$PROJECT_DIR$/.idea/P11-Microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Microservices/discover.iml" filepath="$PROJECT_DIR$/Microservices/discover.iml" />
+    </modules>
+  </component>
+</project>

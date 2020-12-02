@@ -1,0 +1,34 @@
+version: '3'
+services:
+  gateway:
+    image: openjdk
+    command: sh -c "java -jar api-gateway-0.0.1-SNAPSHOT.jar"
+    ports:
+      - 8080:8080
+    working_dir: /app
+    volumes:
+      - ./:/app
+  cars:
+    image: openjdk
+    command: sh -c "java -jar car-catalog-0.0.1-SNAPSHOT.jar"
+    working_dir: /app
+    volumes:
+      - ./:/app
+  eureka:
+    image: openjdk
+    command: sh -c "java -jar discover-0.0.1-SNAPSHOT.jar"
+    working_dir: /app
+    volumes:
+      - ./:/app
+  reviews:
+    image: openjdk
+    command: sh -c "java -jar demo-0.0.1-SNAPSHOT.jar"
+    working_dir: /app
+    volumes:
+      - ./:/app
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo
+volumes:
+  data:

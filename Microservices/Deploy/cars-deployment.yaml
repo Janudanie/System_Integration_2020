@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: D:\Klasser\SystemIntegration\Microservices\Deploy\kompose.exe convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: cars
+  name: cars
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: cars
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: D:\Klasser\SystemIntegration\Microservices\Deploy\kompose.exe
+          convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: cars
+    spec:
+      containers:
+      - args:
+        - sh
+        - -c
+        - java -jar car-catalog-0.0.1-SNAPSHOT.jar
+        image: openjdk
+        imagePullPolicy: ""
+        name: cars
+        resources: {}
+        workingDir: /app
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}

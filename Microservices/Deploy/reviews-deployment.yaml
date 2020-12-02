@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: D:\Klasser\SystemIntegration\Microservices\Deploy\kompose.exe convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: reviews
+  name: reviews
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: reviews
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: D:\Klasser\SystemIntegration\Microservices\Deploy\kompose.exe
+          convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: reviews
+    spec:
+      containers:
+      - args:
+        - sh
+        - -c
+        - java -jar demo-0.0.1-SNAPSHOT.jar
+        image: openjdk
+        imagePullPolicy: ""
+        name: reviews
+        resources: {}
+        workingDir: /app
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: 
+        - mountPath
+status: {}

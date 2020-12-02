@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eureka
+  labels:
+    app: cars
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cars
+  template:
+    metadata:
+      labels:
+        app: cars
+    spec:
+      containers:
+      - name: eureka
+        image: openjdk
+        imagePullPolicy: Never
+        command: ["java -jar /app/discover-0.0.1-SNAPSHOT.jar"]
+        args: ["-jar discover-0.0.1-SNAPSHOT.jar"]
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - mountPath: /app
+          name: test-volume
+      volumes:
+      - name: test-volume
+        hostPath:
+          path: 'D:\Klasser\SystemIntegration\Microservices\Deploy'
+          type: Directory
