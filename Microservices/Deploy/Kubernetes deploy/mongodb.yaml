@@ -4,19 +4,18 @@ metadata:
 metadata:
   name: mongodb
   labels:
-    app: cars
+    app: mongodb
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: cars
+      app: mongodb
   template:
     metadata:
       labels:
-        app: cars
+        app: mongodb
     spec:
       containers:
       - name: mongodb
         image: mongo
         imagePullPolicy: Never
-      restartPolicy: Never

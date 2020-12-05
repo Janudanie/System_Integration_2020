@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cars
+  namespace: default
+  labels:
+    app: cars
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cars
+  template:
+    metadata:
+      labels:
+        app: cars
+    spec:
+      hostname: cars
+      containers:
+      - name: cars
+        image: openjdk
+        imagePullPolicy: Never
+        command: ["sh"]
+        args: ["-c", "java -jar /app/car-catalog-0.0.1-SNAPSHOT.jar"]
+        volumeMounts:
+        - mountPath: /app/car-catalog-0.0.1-SNAPSHOT.jar
+          name: test-volume
+      volumes:
+      - name: test-volume
+        hostPath:
+          path: /data/car-catalog-0.0.1-SNAPSHOT.jar
+          type: File

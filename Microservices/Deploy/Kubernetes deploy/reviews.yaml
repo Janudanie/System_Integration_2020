@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cars
+  name: reviews
   namespace: default
   labels:
-    app: cars
+    app: reviews
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
-      app: cars
+      app: reviews
   template:
     metadata:
       labels:
-        app: cars
+        app: reviews
     spec:
-      hostname: cars
+      hostname: reviews
       containers:
-      - name: cars
+      - name: reviews
         image: openjdk
         imagePullPolicy: Never
         command: ["sh"]
-        args: ["-c", "java -jar /app/car-catalog-0.0.1-SNAPSHOT.jar"]
+        args: ["-c", "java -jar /app/demo-0.0.1-SNAPSHOT.jar"]
         volumeMounts:
-        - mountPath: /app/car-catalog-0.0.1-SNAPSHOT.jar
+        - mountPath: /app/demo-0.0.1-SNAPSHOT.jar
           name: test-volume
       volumes:
       - name: test-volume
         hostPath:
-          path: /data/car-catalog-0.0.1-SNAPSHOT.jar
+          path: /data/demo-0.0.1-SNAPSHOT.jar
           type: File
